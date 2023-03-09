@@ -21,15 +21,16 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
   
   #get login page and submit login form
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 
   #logout and clear session
-  get '/logout' => 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   #get register page and then submit register form
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  get '/signup', to: 'users#new'
+  post '/users', to: 'users#create'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -37,10 +38,10 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get 'products/:id', to: 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #   get 'products/:id/purchase', to: 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
