@@ -8,25 +8,25 @@ RSpec.describe Product, type: :model do
       expect(@product.save).to eq(true)
     end
 
-    it 'form does not work when name is not provided' do
+    it 'form does not save when name is not provided' do
       @category = Category.create(name: 'Fruits')
       @product = Product.create(description: "A magical plant", category_id: @category.id, quantity: 3, image: "plante_1.jpg", price: 5999)
       expect(@product.save).to eq(false)
     end
 
-    it 'form does not work when price is not provided' do
+    it 'form does not save when price is not provided' do
       @category = Category.create(name: 'Fruits')
       @product = Product.create(name: "AppleHoney", description: "A magical plant", category_id: @category.id, quantity: 3, image: "plante_1.jpg")
       expect(@product.save).to eq(false)
     end
 
-    it 'form does not work when quantity is not provided' do
+    it 'form does not save when quantity is not provided' do
       @category = Category.create(name: 'Fruits')
       @product = Product.create(name: "AppleHoney", description: "A magical plant", category_id: @category.id, image: "plante_1.jpg", price: 5999)
       expect(@product.save).to eq(false)
     end
 
-    it 'form does not work when category is not provided' do
+    it 'form does not save when category is not provided' do
       @product = Product.create(name: "AppleHoney", description: "A magical plant", quantity: 3, image: "plante_1.jpg", price: 5999)
       expect(@product.save).to eq(false)
     end
