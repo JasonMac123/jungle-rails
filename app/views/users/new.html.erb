@@ -3,8 +3,12 @@
   <div class="margin-control">
     <%= form_for :user, url: '/users' do |f| %>
       <div class="mb-auto p-4 w-25">
-        <%= f.label :name, "name"%>
-        <%= f.text_field :name %>
+        <%= f.label :first_name, "first name"%>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="mb-auto p-4 w-25">
+        <%= f.label :last_name, "first name"%>
+        <%= f.text_field :last_name %>
       </div>
       <div class="mb-auto p-4 w-25">
         <%= f.label :email, "email"%>
