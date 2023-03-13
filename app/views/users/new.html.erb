@@ -1,20 +1,25 @@
 <div class="d-flex justify-content-center align-items-center flex-column"> 
   <h1>Sign Up!</h1>
+  <div class="margin-control">
+    <%= form_for :user, url: '/users' do |f| %>
+      <div class="mb-auto p-4 w-25">
+        <%= f.label :name, "name"%>
+        <%= f.text_field :name %>
+      </div>
+      <div class="mb-auto p-4 w-25">
+        <%= f.label :email, "email"%>
+        <%= f.text_field :email %>
+      </div>
+      <div class="mb-auto p-4 w-25">
+        <%= f.label :password, "password"%>
+        <%= f.password_field :password %>
+      </div>
+      <div class="mb-auto p-4 w-25">
+        <%= f.label :password_confirmation, "confirm password"%>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <%= f.submit "Submit", class: 'btn btn-primary button-centering'%>
 
-  <%= form_for :user, url: '/users' do |f| %>
-    <div class="mb-auto p-4 w-25">
-      Name: <%= f.text_field :name %>
-    </div>
-    <div class="mb-auto p-4 w-25">
-      Email: <%= f.text_field :email %>
-    </div>
-    <div class="mb-auto p-4 w-25">
-      Password: <%= f.password_field :password %>
-    </div>
-    <div class="mb-auto p-4 w-25">
-      Password Confirmation: <%= f.password_field :password_confirmation %>
-    </div>
-    <%= f.submit "Submit", class: 'btn btn-primary'%>
-
-  <% end %>
+    <% end %>
+  </div>
  </div>
