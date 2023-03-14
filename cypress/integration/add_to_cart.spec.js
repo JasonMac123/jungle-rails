@@ -7,9 +7,23 @@ describe("products on homepage", () => {
     cy.visit("/");
   });
 
-  it("Visit an indivisual product page", () => {
+  it("Add an item from the product individual page", () => {
     cy.get(".products article").should("be.visible");
     cy.get('[alt="Scented Blade"]').click();
     cy.get(".products-show").should("be.visible");
+    cy.get(".btn").click();
+    cy.get(".end-0 > .nav-link").should(
+      "have.text",
+      " \n          My Cart (1) "
+    );
+  });
+
+  it("Visit an indivisual product page", () => {
+    cy.get(".products article").should("be.visible");
+    cy.get(".button_to > .btn").click({ force: true });
+    cy.get(".end-0 > .nav-link").should(
+      "have.text",
+      " \n          My Cart (1) "
+    );
   });
 });
